@@ -7,7 +7,7 @@ const ErrorPage: NextJS.Pages.Page<NextJS.Pages.ErrorPageProps> = ({
 }) => {
     return (
         <>
-            <MetaLayout title={`${code} | Page Error`} />
+            <MetaLayout title={`Ask Marketing - Page Error | ${code}`} />
             <div className="h-screen flex flex-col justify-center items-center max-w-[500px] mx-auto">
                 <article className="w-full px-8">
                     <h3 className="mb-6 font-semibold text-3xl lg:text-5xl text-pink-500 underline">
