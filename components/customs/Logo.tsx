@@ -1,5 +1,7 @@
-import { NextJS } from 'types';
-import { Route } from '../templates';
+import dynamic from 'next/dynamic';
+import type { NextJS } from 'types';
+
+const Route = dynamic(() => import('../templates').then((_) => _.Route));
 
 interface LogoProps {
     href?: string;

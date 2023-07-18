@@ -1,6 +1,8 @@
 import type { NextJS } from 'types';
-import { Route } from '../templates';
 import { BsArrowRight } from 'react-icons/bs';
+import dynamic from 'next/dynamic';
+
+const Route = dynamic(() => import('../templates').then((_) => _.Route));
 
 const StylishRoute: NextJS.Components.Created<NextJS.Components.WithHref> = ({
     href,

@@ -24,6 +24,7 @@ import Style from './layout.module.css';
 import { twMerge } from 'tailwind-merge';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 
 export const __PageLayout__: NextJS.Components.Default<
     NextJS.Components.WithChildren<'must'>
@@ -52,13 +53,16 @@ export const __PageLayout__: NextJS.Components.Default<
     }, [animate]);
 
     return (
-        <div
+        <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
             className={twMerge(
                 Style.main,
                 animate === 'fadein' ? 'in' : animate === 'fadeout' ? 'out' : ''
             )}
         >
             {children}
-        </div>
+        </motion.div>
     );
 };

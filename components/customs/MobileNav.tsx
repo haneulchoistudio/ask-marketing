@@ -1,5 +1,7 @@
-import { NextJS } from 'types';
-import { Button } from '../templates';
+import type { NextJS } from 'types';
+import dynamic from 'next/dynamic';
+
+const Button = dynamic(() => import('../templates').then((_) => _.Button));
 
 const MobileNav: NextJS.Components.Created<
     NextJS.Components.WithChildren<'must'> &

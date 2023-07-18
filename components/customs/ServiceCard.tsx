@@ -1,8 +1,9 @@
 import type { StaticImageData } from 'next/image';
 import type { NextJS } from 'types';
-import { Route } from '../templates';
 import Image from 'next/image';
+import dynamic from 'next/dynamic';
 
+const Route = dynamic(() => import('../templates').then((_) => _.Route));
 interface FloatBoxProps {
     description: string;
     slug: string;

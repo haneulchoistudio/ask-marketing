@@ -1,4 +1,4 @@
-import { NextJS } from 'types';
+import type { NextJS } from 'types';
 
 const Footer: NextJS.Components.Created = () => {
     return (

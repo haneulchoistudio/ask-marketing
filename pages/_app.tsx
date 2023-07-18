@@ -11,6 +11,8 @@ import { LanguageContextProvider } from '@/next-js/template-components';
 
 import type { NextJS } from 'types';
 
+import { AnimatePresence } from 'framer-motion';
+
 export default function App(props: NextJS.Pages.PageProps) {
     const { Component, pageProps } = props;
 
@@ -19,7 +21,15 @@ export default function App(props: NextJS.Pages.PageProps) {
     return (
         <ThemeContextProvider storageName="theme">
             <LanguageContextProvider storageName="language">
-                {getLayout(<Component {...pageProps} />)}
+                {getLayout(
+                    <AnimatePresence
+                        mode="wait"
+                        initial={false}
+                        onExitComplete={() => window.scrollTo(0, 0)}
+                    >
+                        <Component {...pageProps} />
+                    </AnimatePresence>
+                )}
             </LanguageContextProvider>
         </ThemeContextProvider>
     );
