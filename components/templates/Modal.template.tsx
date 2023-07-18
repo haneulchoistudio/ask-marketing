@@ -10,7 +10,10 @@ const ModalCloseButton: NextJS.Components.Default<
     return (
         <Button
             onClick={onClick}
-            className={twMerge('fixed top-5 right-6 cursor-pointer', className)}
+            className={twMerge(
+                'fixed top-5 right-6 lg:top-6 xl:right-8 xl:top-8 2xl:right-10 cursor-pointer',
+                className
+            )}
         >
             {children}
         </Button>

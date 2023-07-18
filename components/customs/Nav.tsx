@@ -7,7 +7,7 @@ const Nav: NextJS.Components.Created<
     return (
         <nav
             className={twMerge(
-                'w-full flex justify-between items-center px-6 py-4 bg-neutral-900/90 backdrop-bur-md fixed top-0',
+                'w-full flex justify-between items-center py-5 px-6 lg:p-6 xl:p-8 2xl:px-10 bg-neutral-900/90 backdrop-bur-md fixed top-0 z-40',
                 className
             )}
         >

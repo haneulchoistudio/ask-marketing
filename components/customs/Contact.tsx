@@ -1,12 +1,12 @@
-import { NextJS } from 'types';
+import type { NextJS } from 'types';
 
-interface ContactTextProps {
+interface ContactProps {
     email?: string;
     phone?: string;
 }
 
-const ContactText: NextJS.Components.Created<
-    NextJS.Components.WithChildren & ContactTextProps
+const Contact: NextJS.Components.Created<
+    NextJS.Components.WithChildren & ContactProps
 > = ({ phone, email, children }) => {
     return (
         <>
@@ -19,4 +19,4 @@ const ContactText: NextJS.Components.Created<
     );
 };
 
-export default ContactText;
+export default Contact;

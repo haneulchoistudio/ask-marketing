@@ -8,8 +8,11 @@ interface LogoProps {
 const Logo: NextJS.Components.Created<LogoProps> = ({ href = '/' }) => {
     return (
         <h1 className="font-bold text-xl lg:text-2xl">
-            <Route href={href} className="lg:hover:text-slate-300">
-                ASK MARKETING
+            <Route
+                href={href}
+                className="lg:hover:text-slate-300 font-light tracking-widest"
+            >
+                ASK.MK
             </Route>
         </h1>
     );

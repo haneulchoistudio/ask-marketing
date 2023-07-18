@@ -1,10 +1,18 @@
-import { MetaLayout, Route } from '@/next-js/template-components';
+import { Button, MetaLayout, Route } from '@/next-js/template-components';
+import { useRouter } from 'next/router';
 import type { NextJS } from 'types';
 
 const ErrorPage: NextJS.Pages.Page<NextJS.Pages.ErrorPageProps> = ({
     code,
     message,
 }) => {
+    const router = useRouter();
+
+    async function onPushHome() {
+        await router.push('/');
+        router.reload();
+    }
+
     return (
         <>
             <MetaLayout title={`Ask Marketing - Page Error | ${code}`} />
@@ -13,15 +21,15 @@ const ErrorPage: NextJS.Pages.Page<NextJS.Pages.ErrorPageProps> = ({
                     <h3 className="mb-6 font-semibold text-3xl lg:text-5xl text-pink-500 underline">
                         {code}
                     </h3>
-                    <p className="mb-3 lg:text-lg leading-relaxed lg:leading-relaxed text-neutral-800 font-medium">
+                    <p className="mb-3 lg:text-lg leading-relaxed lg:leading-relaxed text-slate-400 font-medium">
                         {message}
                     </p>
-                    <Route
-                        href="/"
+                    <Button
+                        onClick={onPushHome}
                         className="underline text-blue-500 font-medium lg:hover:opacity-60"
                     >
                         Go Home
-                    </Route>
+                    </Button>
                 </article>
             </div>
         </>
