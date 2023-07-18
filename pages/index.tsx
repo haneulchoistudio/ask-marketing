@@ -12,7 +12,7 @@ import Contact from '@/next-js/components/Contact';
 import MobileNav from '@/next-js/components/MobileNav';
 import { useState } from 'react';
 import { AiOutlineClose } from 'react-icons/ai';
-import { BsArrowLeft, BsArrowRight } from 'react-icons/bs';
+import { BsArrowLeft } from 'react-icons/bs';
 import { twMerge } from 'tailwind-merge';
 import { useRouter } from 'next/router';
 
@@ -20,8 +20,9 @@ import DigitalMarketing from 'public/digital_marketing.png';
 import SocialMedia from 'public/social_media.png';
 import WebDesign from 'public/web_design.png';
 import Ecommerce from 'public/ecommerce.png';
-import Image from 'next/image';
 import Footer from '@/next-js/components/Footer';
+import ServiceCard from '@/next-js/components/ServiceCard';
+import StylishRoute from '@/next-js/components/StylishRoute';
 
 const Homepage: NextJS.Pages.Page = () => {
     const [showMobileNav, setShowMobileNav] = useState<boolean>(false);
@@ -62,7 +63,7 @@ const Homepage: NextJS.Pages.Page = () => {
                                             className={twMerge(
                                                 'font-semibold text-4xl flex items-center gap-x-4 w-max lg:hover:opacity-60 cursor-pointer',
                                                 router.pathname === route.href
-                                                    ? 'bg-slate-50 text-neutral-900'
+                                                    ? 'bg-gray-50 text-neutral-900'
                                                     : 'text-slate-300'
                                             )}
                                         >
@@ -87,23 +88,14 @@ const Homepage: NextJS.Pages.Page = () => {
                     <span className="rounded-md animate-ping block w-[25px] lg:w-[55px] h-[25px] lg:h-[55px] bg-gradient-to-br from-indigo-400 via-blue-400 to-teal-400" />
                     <span className="rounded-md animate-bounce block w-[60px] lg:w-[110px] h-[60px] lg:h-[110px] bg-gradient-to-br from-indigo-400 via-blue-400 to-teal-400" />
                 </article>
-                <article className="relative z-20 w-full p-10 bg-neutral-900/90 backdrop-blur-lg">
+                <article className="relative z-20 w-full p-10 bg-neutral-950/90 backdrop-blur-lg flex flex-col items-center">
                     <h3 className="mb-4 text-sm lg:text-base xl:text-lg font-light font-lato tracking-[0.25rem] lg:tracking-[0.2rem] text-center">
                         ASK MARKETING
                     </h3>
                     <h4 className="mb-6 max-w-4xl mx-auto text-center font-bold font-lato text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-[1.35] md:leading-[1.35] lg:leading-[1.35] xl:leading-[1.35]">
                         Shaping the Digital Presence of Your Business.
                     </h4>
-                    <Route
-                        href="/about"
-                        className="group font-light text-xl lg:text-2xl flex items-center gap-x-4 justify-center py-4 lg:hover:px-8 lg:hover:bg-neutral-800/90 border border-transparent w-max mx-auto lg:hover:border-neutral-400/25 tracking-wide lg:hover:tracking-[0.05rem] shadow-2xl shadow-transparent lg:hover:shadow-black/50"
-                    >
-                        <span>Our Missions</span>
-                        <BsArrowRight
-                            size={26}
-                            className="transition-all duration-[0.275s] ease-in-out lg:group-hover:rotate-180 "
-                        />
-                    </Route>
+                    <StylishRoute href="/about" name="OUR MISSIONS" />
                 </article>
             </div>
             <div className="w-full h-auto bg-neutral-800">
@@ -112,76 +104,62 @@ const Homepage: NextJS.Pages.Page = () => {
                         <h3 className="mb-4 text-sm lg:text-base xl:text-lg font-light font-lato tracking-[0.25rem] lg:tracking-[0.2rem] text-center">
                             ASK MARKETING
                         </h3>
-                        <h4 className="font-bold font-lato text-3xl lg:text-4xl text-center tracking-[0.25rem]">
+                        <h4 className="font-bold font-lato text-3xl md:text-4xl lg:text-5xl text-center tracking-[0.25rem]">
                             Services & Works
                         </h4>
                         <div className="w-[50%] max-w-[100px] mx-auto block h-[2.5px] bg-gradient-to-r from-blue-500 via-teal-500 to-indigo-500 mt-12 rounded" />
                     </article>
-                    <List className="grid grid-cols-1 lg:grid-cols-3 gap-8 2xl:gap-16">
-                        <div className="group transition-all duration-[0.35s] ease-in-out cursor-pointer">
-                            <div className="p-1 mb-6 bg-gradient-to-br from-blue-500 via-teal-500 to-indigo-500 transition-all duration-[0.35s] ease-in-out lg:group-hover:m-8 lg:group-hover:p-0">
-                                <picture className="block overflow-hidden">
-                                    <Image
-                                        src={WebDesign}
-                                        alt="Web Design Photo"
-                                        className="grayscale"
-                                    />
-                                </picture>
-                            </div>
+                    <List className="grid grid-cols-1 lg:grid-cols-3 gap-16">
+                        <ServiceCard
+                            name="digital marketing"
+                            slug="digitalmarketing"
+                            image={DigitalMarketing}
+                            description="Attract more customers on the internet."
+                        />
+                        <div className="lg:col-span-2 pl-6 border-l-2 lg:pl-0 lg:border-l-0 flex flex-col gap-y-8 border-t-2 lg:border-t-0 pt-6 lg:pt-0 ">
                             <div>
-                                <h5 className="font-light text-2xl lg:text-3xl text-center tracking-[0.25rem] transition-all duration-[0.35s] ease-in-out lg:group-hover:tracking-[0.05rem]">
-                                    WEB DESIGN
-                                </h5>
+                                <h3 className="font-bold text-2xl md:text-4xl lg:text-6xl lg:text-right mb-6 lg:mb-8 leading-[1.4] lg:leading-[1.2]">
+                                    <span className="inline-block">
+                                        ATTRACTING CUSTOMERS
+                                    </span>
+                                    <span className="inline-block">
+                                        ON INTERNET
+                                    </span>
+                                </h3>
+                                <p className="font-lato font-light text-left lg:text-right leading-[1.67] lg:leading-[1.67] 2xl:leading-[1.67] text-base lg:text-lg 2xl:text-xl pr-16 lg:pr-0 lg:pl-16 2xl:pl-32">
+                                    <strong>ASK MAREKTING</strong> provides
+                                    various services from digital marketing to
+                                    ecommerce platform development. We use
+                                    modern strategies and best practices to
+                                    attract customers on internet to your
+                                    business.
+                                </p>
+                            </div>
+                            <div className="flex flex-col items-start lg:items-end">
+                                <StylishRoute
+                                    href="/about"
+                                    name="GO TO CONTACT"
+                                />
                             </div>
                         </div>
-                        <div className="group transition-all duration-[0.35s] ease-in-out cursor-pointer">
-                            <div className="p-1 mb-6 bg-gradient-to-br from-blue-500 via-teal-500 to-indigo-500 transition-all duration-[0.35s] ease-in-out lg:group-hover:m-8 lg:group-hover:p-0">
-                                <picture className="block overflow-hidden">
-                                    <Image
-                                        src={SocialMedia}
-                                        alt="Social Media Photo"
-                                        className="grayscale"
-                                    />
-                                </picture>
-                            </div>
-                            <div>
-                                <h5 className="font-light text-2xl lg:text-3xl text-center tracking-[0.25rem] transition-all duration-[0.35s] ease-in-out lg:group-hover:tracking-[0.05rem]">
-                                    SOCIAL MEDIA
-                                </h5>
-                            </div>
-                        </div>
-                        <div className="group transition-all duration-[0.35s] ease-in-out cursor-pointer">
-                            <div className="p-1 mb-6 bg-gradient-to-br from-blue-500 via-teal-500 to-indigo-500 transition-all duration-[0.35s] ease-in-out lg:group-hover:m-8 lg:group-hover:p-0">
-                                <picture className="block overflow-hidden">
-                                    <Image
-                                        src={DigitalMarketing}
-                                        alt="Digital Marketing Photo"
-                                        className="grayscale"
-                                    />
-                                </picture>
-                            </div>
-                            <div>
-                                <h5 className="font-light text-2xl lg:text-3xl text-center tracking-[0.25rem] transition-all duration-[0.35s] ease-in-out lg:group-hover:tracking-[0.05rem]">
-                                    DIGITAL MARKETING
-                                </h5>
-                            </div>
-                        </div>
-                        <div className="group transition-all duration-[0.35s] ease-in-out cursor-pointer">
-                            <div className="p-1 mb-6 bg-gradient-to-br from-blue-500 via-teal-500 to-indigo-500 transition-all duration-[0.35s] ease-in-out lg:group-hover:m-8 lg:group-hover:p-0">
-                                <picture className="block overflow-hidden">
-                                    <Image
-                                        src={Ecommerce}
-                                        alt="Ecommerce Photo"
-                                        className="grayscale"
-                                    />
-                                </picture>
-                            </div>
-                            <div>
-                                <h5 className="font-light text-2xl lg:text-3xl text-center tracking-[0.25rem] transition-all duration-[0.35s] ease-in-out lg:group-hover:tracking-[0.05rem]">
-                                    ECOMMERCE
-                                </h5>
-                            </div>
-                        </div>
+                        <ServiceCard
+                            name="web design"
+                            slug="webdesign"
+                            image={WebDesign}
+                            description="Show your business to the world."
+                        />
+                        <ServiceCard
+                            name="social media"
+                            slug="socialmedia"
+                            image={SocialMedia}
+                            description="Expose your business to appropriate users on media."
+                        />
+                        <ServiceCard
+                            name="ecommerce"
+                            slug="ecommerce"
+                            image={Ecommerce}
+                            description="Make and own an e-commerce platform to sell your products."
+                        />
                     </List>
                 </section>
             </div>

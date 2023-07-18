@@ -18,7 +18,7 @@ class MyDocument extends Document {
                         rel="stylesheet"
                     />
                 </Head>
-                <body className="bg-neutral-900 text-slate-50 ">
+                <body className="bg-neutral-950 text-slate-50 ">
                     <Main />
                     <NextScript />
                 </body>

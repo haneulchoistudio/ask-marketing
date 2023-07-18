@@ -63,7 +63,7 @@ export const __Modal__: NextJS.Components.Default<
             <aside
                 data-modal-name={name}
                 className={twMerge(
-                    'fixed top-0 left-0 z-50 w-full h-screen bg-neutral-900/75 backdrop-blur-md flex flex-col justify-center items-center',
+                    'fixed top-0 left-0 z-50 w-full h-screen bg-neutral-900/95 backdrop-blur-md flex flex-col justify-center items-center',
                     className
                 )}
             >

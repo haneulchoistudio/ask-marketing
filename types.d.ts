@@ -1,5 +1,6 @@
 import type { NextPage } from 'next';
 import type { AppProps } from 'next/app';
+import type { StaticImageData } from 'next/image';
 
 declare namespace NextJS {
     declare namespace Pages {
@@ -111,6 +112,15 @@ declare namespace NextJS {
                     storageName: string;
                 }
             >;
+        }
+    }
+
+    declare namespace Data {
+        export interface ServiceProps {
+            name?: string;
+            description?: string;
+            slug?: string;
+            image?: StaticImageData;
         }
     }
 }
