@@ -1,4 +1,4 @@
-import { Button, MetaLayout, Route } from '@/next-js/template-components';
+import { Button, MetaLayout } from '@/next-js/template-components';
 import { useRouter } from 'next/router';
 import type { NextJS } from 'types';
 

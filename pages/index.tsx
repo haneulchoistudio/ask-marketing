@@ -16,6 +16,13 @@ import { BsArrowLeft, BsArrowRight } from 'react-icons/bs';
 import { twMerge } from 'tailwind-merge';
 import { useRouter } from 'next/router';
 
+import DigitalMarketing from 'public/digital_marketing.png';
+import SocialMedia from 'public/social_media.png';
+import WebDesign from 'public/web_design.png';
+import Ecommerce from 'public/ecommerce.png';
+import Image from 'next/image';
+import Footer from '@/next-js/components/Footer';
+
 const Homepage: NextJS.Pages.Page = () => {
     const [showMobileNav, setShowMobileNav] = useState<boolean>(false);
     const router = useRouter();
@@ -89,7 +96,7 @@ const Homepage: NextJS.Pages.Page = () => {
                     </h4>
                     <Route
                         href="/about"
-                        className="group font-light text-xl lg:text-2xl flex items-center gap-x-4 justify-center py-3 lg:hover:px-8 lg:hover:bg-neutral-800/90 border border-transparent w-max mx-auto lg:hover:border-neutral-400/25 tracking-wide lg:hover:tracking-[0.05rem] shadow-2xl shadow-transparent lg:hover:shadow-black/50"
+                        className="group font-light text-xl lg:text-2xl flex items-center gap-x-4 justify-center py-4 lg:hover:px-8 lg:hover:bg-neutral-800/90 border border-transparent w-max mx-auto lg:hover:border-neutral-400/25 tracking-wide lg:hover:tracking-[0.05rem] shadow-2xl shadow-transparent lg:hover:shadow-black/50"
                     >
                         <span>Our Missions</span>
                         <BsArrowRight
@@ -99,6 +106,86 @@ const Homepage: NextJS.Pages.Page = () => {
                     </Route>
                 </article>
             </div>
+            <div className="w-full h-auto bg-neutral-800">
+                <section className="px-8 py-20 lg:py-28 max-w-cutoff mx-auto">
+                    <article className="mb-20 lg:mb-28">
+                        <h3 className="mb-4 text-sm lg:text-base xl:text-lg font-light font-lato tracking-[0.25rem] lg:tracking-[0.2rem] text-center">
+                            ASK MARKETING
+                        </h3>
+                        <h4 className="font-bold font-lato text-3xl lg:text-4xl text-center tracking-[0.25rem]">
+                            Services & Works
+                        </h4>
+                        <div className="w-[50%] max-w-[100px] mx-auto block h-[2.5px] bg-gradient-to-r from-blue-500 via-teal-500 to-indigo-500 mt-12 rounded" />
+                    </article>
+                    <List className="grid grid-cols-1 lg:grid-cols-3 gap-8 2xl:gap-16">
+                        <div className="group transition-all duration-[0.35s] ease-in-out cursor-pointer">
+                            <div className="p-1 mb-6 bg-gradient-to-br from-blue-500 via-teal-500 to-indigo-500 transition-all duration-[0.35s] ease-in-out lg:group-hover:m-8 lg:group-hover:p-0">
+                                <picture className="block overflow-hidden">
+                                    <Image
+                                        src={WebDesign}
+                                        alt="Web Design Photo"
+                                        className="grayscale"
+                                    />
+                                </picture>
+                            </div>
+                            <div>
+                                <h5 className="font-light text-2xl lg:text-3xl text-center tracking-[0.25rem] transition-all duration-[0.35s] ease-in-out lg:group-hover:tracking-[0.05rem]">
+                                    WEB DESIGN
+                                </h5>
+                            </div>
+                        </div>
+                        <div className="group transition-all duration-[0.35s] ease-in-out cursor-pointer">
+                            <div className="p-1 mb-6 bg-gradient-to-br from-blue-500 via-teal-500 to-indigo-500 transition-all duration-[0.35s] ease-in-out lg:group-hover:m-8 lg:group-hover:p-0">
+                                <picture className="block overflow-hidden">
+                                    <Image
+                                        src={SocialMedia}
+                                        alt="Social Media Photo"
+                                        className="grayscale"
+                                    />
+                                </picture>
+                            </div>
+                            <div>
+                                <h5 className="font-light text-2xl lg:text-3xl text-center tracking-[0.25rem] transition-all duration-[0.35s] ease-in-out lg:group-hover:tracking-[0.05rem]">
+                                    SOCIAL MEDIA
+                                </h5>
+                            </div>
+                        </div>
+                        <div className="group transition-all duration-[0.35s] ease-in-out cursor-pointer">
+                            <div className="p-1 mb-6 bg-gradient-to-br from-blue-500 via-teal-500 to-indigo-500 transition-all duration-[0.35s] ease-in-out lg:group-hover:m-8 lg:group-hover:p-0">
+                                <picture className="block overflow-hidden">
+                                    <Image
+                                        src={DigitalMarketing}
+                                        alt="Digital Marketing Photo"
+                                        className="grayscale"
+                                    />
+                                </picture>
+                            </div>
+                            <div>
+                                <h5 className="font-light text-2xl lg:text-3xl text-center tracking-[0.25rem] transition-all duration-[0.35s] ease-in-out lg:group-hover:tracking-[0.05rem]">
+                                    DIGITAL MARKETING
+                                </h5>
+                            </div>
+                        </div>
+                        <div className="group transition-all duration-[0.35s] ease-in-out cursor-pointer">
+                            <div className="p-1 mb-6 bg-gradient-to-br from-blue-500 via-teal-500 to-indigo-500 transition-all duration-[0.35s] ease-in-out lg:group-hover:m-8 lg:group-hover:p-0">
+                                <picture className="block overflow-hidden">
+                                    <Image
+                                        src={Ecommerce}
+                                        alt="Ecommerce Photo"
+                                        className="grayscale"
+                                    />
+                                </picture>
+                            </div>
+                            <div>
+                                <h5 className="font-light text-2xl lg:text-3xl text-center tracking-[0.25rem] transition-all duration-[0.35s] ease-in-out lg:group-hover:tracking-[0.05rem]">
+                                    ECOMMERCE
+                                </h5>
+                            </div>
+                        </div>
+                    </List>
+                </section>
+            </div>
+            <Footer />
         </>
     );
 };
