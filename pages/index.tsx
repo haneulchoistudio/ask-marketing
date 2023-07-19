@@ -4,7 +4,6 @@ import SocialMedia from 'public/social_media.png';
 import WebDesign from 'public/web_design.png';
 import Ecommerce from 'public/ecommerce.png';
 import dynamic from 'next/dynamic';
-import { Form } from '@/next-js/template-components';
 
 const List = dynamic(() =>
     import('@/next-js/template-components').then((_) => _.List)
@@ -19,6 +18,7 @@ const Header = dynamic(() => import('@/next-js/components/Header'));
 const Footer = dynamic(() => import('@/next-js/components/Footer'));
 const ServiceCard = dynamic(() => import('@/next-js/components/ServiceCard'));
 const StylishRoute = dynamic(() => import('@/next-js/components/StylishRoute'));
+const ContactForm = dynamic(() => import('@/next-js/components/ContactForm'));
 
 const Homepage: NextJS.Pages.Page = () => {
     return (
@@ -109,29 +109,45 @@ const Homepage: NextJS.Pages.Page = () => {
                 </div>
                 <div className="bg-neutral-800">
                     <section className="px-8 py-20 lg:py-28 max-w-cutoff mx-auto">
-                        <Form
-                            name="contact form"
-                            className="grid grid-cols-1 lg:grid-cols-12 gap-8"
-                            onSubmit={(e) => {
-                                console.log(e);
-                            }}
-                        >
-                            <article className="lg:col-span-4">
-                                <h4 className="font-medium text-xl md:text-2xl lg:text-3xl">
-                                    Let&apos;s Get in Touch
-                                </h4>
-                                <article className="w-[120px] block h-[2.5px] bg-blue-500 rounded my-8" />
-                                <p>
-                                    It only takes one droplet to break the
-                                    tension of still water and ripple across the
-                                    whole surface.
-                                    <br />
-                                    <br />
-                                    Let us be that droplet for you.
-                                </p>
-                            </article>
-                            <article className="lg;col-span-8"></article>
-                        </Form>
+                        <ContactForm className="flex flex-col gap-y-6">
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                                <div className="overflow-hidden">
+                                    <input
+                                        type="text"
+                                        placeholder="Your Name"
+                                        className="w-full bg-transparent border-b-1 border-t-0 border-x-0 focus:border-blue-500 focus:placeholder:text-blue-500 placeholder:font-light ring-transparent focus:ring-0 focus:ring-transparent transition-all duration-[0.55s] ease-in-out placeholder:text-slate-300 lg:placeholder:text-lg"
+                                    />
+                                </div>
+                                <div className="overflow-hidden">
+                                    <input
+                                        type="email"
+                                        placeholder="Your Email"
+                                        className="w-full bg-transparent border-b-1 border-t-0 border-x-0 focus:border-blue-500 focus:placeholder:text-blue-500 placeholder:font-light ring-transparent focus:ring-0 focus:ring-transparent transition-all duration-[0.55s] ease-in-out placeholder:text-slate-300 lg:placeholder:text-lg"
+                                    />
+                                </div>
+                            </div>
+                            <div className="overflow-hidden">
+                                <input
+                                    type="tel"
+                                    placeholder="Your Phone"
+                                    className="w-full bg-transparent border-b-1 border-t-0 border-x-0 focus:border-blue-500 focus:placeholder:text-blue-500 placeholder:font-light ring-transparent focus:ring-0 focus:ring-transparent transition-all duration-[0.55s] ease-in-out placeholder:text-slate-300 lg:placeholder:text-lg"
+                                />
+                            </div>
+                            <div className="overflow-hidden">
+                                <textarea
+                                    rows={6}
+                                    placeholder="Describe Your Message Here..."
+                                    className="w-full bg-transparent border-b-1 border-t-0 border-x-0 focus:border-blue-500 focus:placeholder:text-blue-500 placeholder:font-light ring-transparent focus:ring-0 focus:ring-transparent transition-all duration-[0.55s] ease-in-out placeholder:text-slate-300 lg:placeholder:text-lg"
+                                />
+                            </div>
+                            <div>
+                                <input
+                                    type="submit"
+                                    value={'Submit Message'}
+                                    className="px-8  py-3 bg-neutral-900 text-slate-50 font-medium text-lg tracking-wide ring ring-transparent transition-all duration-[0.35s] ease-in-out lg:hover:ring-blue-500 lg:hover:bg-transparent lg:hover:text-blue-500 cursor-pointer uppercase"
+                                />
+                            </div>
+                        </ContactForm>
                     </section>
                 </div>
                 <Footer />
