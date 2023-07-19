@@ -14,7 +14,7 @@ const FloatBox: NextJS.Components.Created<FloatBoxProps> = ({
     slug,
 }) => {
     return (
-        <article className="absolute bottom-0 lg:-top-full z-10 lg:-translate-y-full w-full h-max lg:h-full bg-neutral-900/95 lg:backdrop-blur-sm transform transition-all duration-[0.45s] ease-in-out lg:group-hover:-top-0 lg:group-hover:-translate-y-0 flex flex-col justify-between lg:justify-center p-6 lg:p-8">
+        <article className="absolute bottom-0 lg:-top-full z-10 lg:-translate-y-full w-full h-max lg:h-full bg-neutral-800 lg:bg-neutral-900/95 lg:backdrop-blur-sm transform transition-all duration-[0.45s] ease-in-out lg:group-hover:-top-0 lg:group-hover:-translate-y-0 flex flex-col justify-between lg:justify-center p-6 lg:p-8">
             <p className="font-light text-base md:text-lg lg:text-xl 2xl:text-2xl 2xl:leading-[1.4] leading-[1.67] lg:leading-[1.67] mb-4 lg:mb-6">
                 {description}
             </p>
@@ -32,7 +32,7 @@ const ImageWrap: NextJS.Components.Created<
     NextJS.Components.WithChildren<'must'>
 > = ({ children }) => {
     return (
-        <div className="overflow-hidden mb-6 transition-all duration-[0.35s] ease-in-out relative">
+        <div className="overflow-hidden mb-6 transition-all duration-[0.35s] ease-in-out relative lg:border lg:border-transparent lg:group-hover:border-neutral-50/50">
             {children}
         </div>
     );
@@ -48,7 +48,7 @@ const ServiceImage: NextJS.Components.Created<ServiceImageProps> = ({
     alt,
 }) => {
     return (
-        <picture className="block overflow-hidden">
+        <picture className="block overflow-hidden trasnform lg:group-hover:scale-125 rotate-45 transition-all duration-[0.35s] ease-in-out lg:group-hover:rotate-0">
             <Image src={image} alt={alt} />
         </picture>
     );

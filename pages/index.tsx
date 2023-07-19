@@ -4,6 +4,7 @@ import SocialMedia from 'public/social_media.png';
 import WebDesign from 'public/web_design.png';
 import Ecommerce from 'public/ecommerce.png';
 import dynamic from 'next/dynamic';
+import { Form } from '@/next-js/template-components';
 
 const List = dynamic(() =>
     import('@/next-js/template-components').then((_) => _.List)
@@ -41,7 +42,7 @@ const Homepage: NextJS.Pages.Page = () => {
                         <StylishRoute href="/about" name="OUR MISSIONS" />
                     </article>
                 </div>
-                <div className="w-full h-auto bg-neutral-800">
+                <div className="w-full h-auto bg-neutral-900">
                     <section className="px-8 py-20 lg:py-28 max-w-cutoff mx-auto">
                         <article className="mb-20 lg:mb-28">
                             <h3 className="mb-4 text-sm lg:text-base xl:text-lg font-light font-lato tracking-[0.25rem] lg:tracking-[0.2rem] text-center">
@@ -54,8 +55,8 @@ const Homepage: NextJS.Pages.Page = () => {
                         </article>
                         <List className="grid grid-cols-1 lg:grid-cols-3 gap-16">
                             <ServiceCard
-                                name="digital marketing"
-                                slug="digitalmarketing"
+                                name="seo marketing"
+                                slug="seomarketing"
                                 image={DigitalMarketing}
                                 description="Attract more customers on the internet."
                             />
@@ -104,6 +105,33 @@ const Homepage: NextJS.Pages.Page = () => {
                                 description="Make and own an e-commerce platform to sell your products."
                             />
                         </List>
+                    </section>
+                </div>
+                <div className="bg-neutral-800">
+                    <section className="px-8 py-20 lg:py-28 max-w-cutoff mx-auto">
+                        <Form
+                            name="contact form"
+                            className="grid grid-cols-1 lg:grid-cols-12 gap-8"
+                            onSubmit={(e) => {
+                                console.log(e);
+                            }}
+                        >
+                            <article className="lg:col-span-4">
+                                <h4 className="font-medium text-xl md:text-2xl lg:text-3xl">
+                                    Let&apos;s Get in Touch
+                                </h4>
+                                <article className="w-[120px] block h-[2.5px] bg-blue-500 rounded my-8" />
+                                <p>
+                                    It only takes one droplet to break the
+                                    tension of still water and ripple across the
+                                    whole surface.
+                                    <br />
+                                    <br />
+                                    Let us be that droplet for you.
+                                </p>
+                            </article>
+                            <article className="lg;col-span-8"></article>
+                        </Form>
                     </section>
                 </div>
                 <Footer />

@@ -19,18 +19,16 @@ export default function App(props: NextJS.Pages.PageProps) {
     const getLayout = Component.getLayout || ((page) => page);
 
     return (
-        <ThemeContextProvider storageName="theme">
-            <LanguageContextProvider storageName="language">
-                {getLayout(
-                    <AnimatePresence
-                        mode="wait"
-                        initial={false}
-                        onExitComplete={() => window.scrollTo(0, 0)}
-                    >
-                        <Component {...pageProps} />
-                    </AnimatePresence>
-                )}
-            </LanguageContextProvider>
-        </ThemeContextProvider>
+        <AnimatePresence
+            mode="wait"
+            initial={false}
+            onExitComplete={() => window.scrollTo(0, 0)}
+        >
+            <ThemeContextProvider storageName="theme">
+                <LanguageContextProvider storageName="language">
+                    {getLayout(<Component {...pageProps} />)}
+                </LanguageContextProvider>
+            </ThemeContextProvider>
+        </AnimatePresence>
     );
 }
